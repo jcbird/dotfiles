@@ -1,0 +1,28 @@
+# OS X
+._*
+.DS_Store
+.LSOverride
+.VolumeIcon.icns
+# Icon must end with two carriage returns (\r)
+Icon
+
+# Windows
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# Temporary
+*~
+*.bak
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+.netrwhist
+
