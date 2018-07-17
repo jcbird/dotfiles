@@ -1,3 +1,10 @@
+" Automatically install vim-plug if it doesn't exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -5,26 +12,25 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 Plug 'vim-voom/VOoM'
-Plug 'romainl/Apprentice.git'
-Plug 'Konfekt/FastFold.git'
-Plug 'LaTeX-Box-Team/LaTeX-Box.git'
+Plug 'romainl/Apprentice'
+Plug 'Konfekt/FastFold'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'vim-voom/VOoM'
-Plug 'kien/ctrlp.vim.git'
-Plug 'davidhalter/jedi-vim.git'
-Plug 'davidhalter/jedi.git'
-Plug 'romainl/Apprentice.git'
-Plug 'NLKNguyen/papercolor-theme.git'
-Plug 'scrooloose/syntastic.git'
-Plug 'reedes/vim-colors-pencil.git'
-Plug 'altercation/vim-colors-solarized.git'
-Plug 'tpope/vim-fugitive.git'
-Plug 'beloglazov/vim-online-thesaurus.git'
-Plug 'heavenshell/vim-pydocstring.git'
-Plug 'tpope/vim-sensible.git'
-Plug 'jpalardy/vim-slime.git'
-Plug 'tpope/vim-speeddating.git'
-Plug 'tpope/vim-surround.git'
-Plug 'tpope/vim-vinegar.git'
+Plug 'kien/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'junegunn/goyo.vim'
+Plug 'romainl/Apprentice'
+Plug 'scrooloose/syntastic'
+Plug 'reedes/vim-colors-pencil'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'beloglazov/vim-online-thesaurus'
+Plug 'heavenshell/vim-pydocstring'
+Plug 'tpope/vim-sensible'
+Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 
 " Initialize plugin system
 call plug#end()
@@ -41,16 +47,18 @@ filetype off
 
 "BASICS
 syntax on
+syntax enable
 "filetype on
 filetype plugin indent on
 
 " SCREEN Colors and colorscheme
 "set background=light
+" set termguicolors
 set background=dark
 let g:solarized_termcolors=256
 "colorscheme solarized
 colorscheme pencil
-let g:pencil_higher_contrast_ui=1
+let g:pencil_higher_contrast_ui=0
 
 "colorscheme mod_apprentice
 
